@@ -4,5 +4,5 @@ import com.intraway.fizzbuzz.entities.ListaNumero;
 
 public interface FizzBuzzHandler {
 
-    ListaNumero getListaNumero(String minNum, String maxNum);
+    ListaNumero getListaNumero(int minNum, int maxNum);
 }

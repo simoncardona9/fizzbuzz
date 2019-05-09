@@ -4,6 +4,10 @@ public class FizzBuzzObject {
 
     private String timestamp;
 
+    public FizzBuzzObject(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public String getTimestamp() {
         return timestamp;
     }

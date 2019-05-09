@@ -6,6 +6,13 @@ public class ListaNumero extends FizzBuzzObject {
     private String description;
     private String list;
 
+    public ListaNumero(String timestamp, String code, String description, String list) {
+        super(timestamp);
+        this.code = code;
+        this.description = description;
+        this.list = list;
+    }
+
     public String getCode() {
         return code;
     }

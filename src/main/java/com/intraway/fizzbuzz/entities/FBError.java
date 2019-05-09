@@ -1,18 +1,27 @@
 package com.intraway.fizzbuzz.entities;
 
-public class Error extends FizzBuzzObject{
+public class FBError extends FizzBuzzObject{
 
-    private String status;
+    private Integer status;
     private String error;
     private String exception;
     private String message;
     private String path;
 
-    public String getStatus() {
+    public FBError(String timestamp, Integer status, String error, String exception, String message, String path) {
+        super(timestamp);
+        this.status = status;
+        this.error = error;
+        this.exception = exception;
+        this.message = message;
+        this.path = path;
+    }
+
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
