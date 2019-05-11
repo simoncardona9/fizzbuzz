@@ -1,8 +1,13 @@
 package com.intraway.fizzbuzz.entities;
 
-public class FizzBuzzObject {
+import java.io.Serializable;
+
+public class FizzBuzzObject implements Serializable {
 
     private String timestamp;
+
+    public FizzBuzzObject() {
+    }
 
     public FizzBuzzObject(String timestamp) {
         this.timestamp = timestamp;

@@ -23,3 +23,8 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
+
+bootRun {
+	systemProperties = System.properties
+	jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"]
+}

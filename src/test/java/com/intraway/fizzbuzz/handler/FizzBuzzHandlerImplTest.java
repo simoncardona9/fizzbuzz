@@ -2,9 +2,11 @@ package com.intraway.fizzbuzz.handler;
 
 
 import com.intraway.fizzbuzz.entities.ListaNumero;
+import com.intraway.fizzbuzz.utils.Counter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.util.ReflectionTestUtils;
 
 public class FizzBuzzHandlerImplTest {
 
@@ -17,6 +19,8 @@ public class FizzBuzzHandlerImplTest {
     @BeforeEach
     public void init() {
         fizzBuzzHandler = new FizzBuzzHandlerImpl();
+        Counter counter = new Counter(0);
+        ReflectionTestUtils.setField(fizzBuzzHandler, "counter", counter);
     }
 
     @Test

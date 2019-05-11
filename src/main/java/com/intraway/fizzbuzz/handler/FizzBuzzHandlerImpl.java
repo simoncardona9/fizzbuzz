@@ -1,10 +1,11 @@
 package com.intraway.fizzbuzz.handler;
 
 import com.intraway.fizzbuzz.entities.ListaNumero;
+import com.intraway.fizzbuzz.utils.Counter;
 import com.intraway.fizzbuzz.utils.FBUtils;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,10 @@ public class FizzBuzzHandlerImpl implements FizzBuzzHandler {
     private final String MESSAGE_MULTIPLOS_TRES_CINCO = "se encontraron multiplos de 3 y de 5";
     private final String MESSAGE_MULTIPLOS_TRES = "se encontraron multiplos de 3";
     private final String MESSAGE_NO_MULTIPLOS = "no se encontraron multiplos";
-    private static int counter = 0;
+
+    @Resource(name = "counter")
+    Counter counter;
+
 
 
     public ListaNumero getListaNumero(int minNum, int maxNum) {
@@ -52,8 +56,8 @@ public class FizzBuzzHandlerImpl implements FizzBuzzHandler {
             description = MESSAGE_NO_MULTIPLOS;
         }
 
-        counter = counter++;
-        ListaNumero listaNumero = new ListaNumero(FBUtils.getTimeStamp(), String.format("%03d", counter),
+        counter.incrementCounter();
+        ListaNumero listaNumero = new ListaNumero(FBUtils.getTimeStamp(), String.format("%03d", counter.getCounter()),
                 description, String.join(",", list));
 
 
